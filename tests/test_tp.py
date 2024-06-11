@@ -49,7 +49,9 @@ def test_multiplication():
         a = rng.randint(0, 2**4)
         b = rng.randint(0, 2**4)
         result = a * b
-        assert nombre_entier(result) == multiplication(nombre_entier(a), nombre_entier(b))
+        assert nombre_entier(result) == multiplication(
+            nombre_entier(a), nombre_entier(b)
+        )
 
 
 def test_facto_ite():
@@ -74,7 +76,7 @@ def test_fibo_rec():
     assert fibo_rec(2) == 1
     assert fibo_rec(12) == 144
     for a in range(2, 32):
-        assert fibo_ite(a) == fibo_ite(a - 1) + fibo_ite(a - 2)
+        assert fibo_rec(a) == fibo_rec(a - 1) + fibo_rec(a - 2)
 
 
 def test_fibo_ite():
@@ -107,4 +109,4 @@ def test_sqrt5():
 
 def test_pow():
     assert pow(12.4, 12) == pytest.approx(13214788658781.803)
-    assert pow(42, 2**4) == pytest.approx(42 ** 16)
+    assert pow(42, 2**4) == pytest.approx(42**16)
